@@ -3,6 +3,7 @@
 
 ## List of problems solved
 * Roman to integer [link](https://leetcode.com/problems/roman-to-integer/)
-* **Add Two Numbers** [link](https://leetcode.com/problems/add-two-numbers/)
+* Add Two Numbers [link](https://leetcode.com/problems/add-two-numbers/)
+* **Median of two sorted arrays** [link](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
 **Problem name** : the repo contains finished or in-progress work about this problem right now.
