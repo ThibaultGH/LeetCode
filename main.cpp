@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -84,14 +85,25 @@ bool isMatch(string s, string p){
 int main(int argc, char *argv[])
 {
 
-  string s = "aab";
-  string p = "c*a*b";
+  // string s = "aab";
+  // string p = "c*a*b";
   
-  bool matching;
+  // bool matching;
 
-  matching = isMatch(s,p);
+  // matching = isMatch(s,p);
 
-  printf("%d\n", matching);
+  // printf("%d\n", matching);
+
+  vector<int> nums1 = {2,7,11,15};
+  vector<int> nums2 = {3,2,4};
+  vector<int> nums3 = {3,3};
+  int target1 = 9;
+  int target2 = 6;
+  int target3 = 6;
+  
+  vector<int> out = twoSum(nums3,target3);
+
+  cout << out[0] << " " << out[1] << endl;
   
   
   return 0;
