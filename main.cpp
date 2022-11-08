@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -116,29 +117,49 @@ vector<int> twoSum(vector<int>& nums, int target) {
         return out;   
     }
 
+int lengthOfLongestSubstring(string s) {
+
+  if (s.empty()) {
+    return 0;
+  }
+
+  string LongestRepetingSubstring = "";
+  int out = s.size();
+  map<char,int> KnownChar;
+  int LastStop;
+
+  for (int i0 = 0; i0 < s.size(); ++i0) {
+
+    auto search = KnownChar.find(s[i0]);
+    
+    if (search != KnownChar.end()) {
+      LastStop = i0;
+      int length = i0-KnownChar[s[i0]];
+      if (length > LongestRepetingSubstring.size()) {
+	LongestRepetingSubstring = s.substr(KnownChar[s[i0]],length);
+      }
+    }
+
+    KnownChar[s[i0]] = i0;
+
+  }
+
+  cout << LongestRepetingSubstring << endl;
+  int SizeLongestRepetingSubstring = LongestRepetingSubstring.size();
+
+  if (SizeLongestRepetingSubstring != out and SizeLongestRepetingSubstring != 0) {
+    out = LongestRepetingSubstring.size();
+  }
+
+  return out;
+}
+
 int main(int argc, char *argv[])
 {
 
-  // string s = "aab";
-  // string p = "c*a*b";
-  
-  // bool matching;
+  string s = "azertyaabjfoire";
 
-  // matching = isMatch(s,p);
-
-  // printf("%d\n", matching);
-
-  vector<int> nums1 = {2,7,11,15};
-  vector<int> nums2 = {3,2,4};
-  vector<int> nums3 = {3,3};
-  int target1 = 9;
-  int target2 = 6;
-  int target3 = 6;
-  
-  vector<int> out = twoSum(nums3,target3);
-
-  cout << out[0] << " " << out[1] << endl;
-  
+  cout << lengthOfLongestSubstring(s) << endl;
   
   return 0;
 }
