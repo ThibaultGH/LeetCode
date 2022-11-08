@@ -82,6 +82,40 @@ bool isMatch(string s, string p){
   
 }
 
+vector<int> twoSum(vector<int>& nums, int target) {
+
+        vector<int> out(2);
+        int i0 = 0;
+        int i1 = 0;
+        int count = 1;
+
+        while(nums[i0]+nums[i1] != target or i0 == i1){
+
+	  printf("i0 = %d, i1 = %d\n", i0,i1);
+	  
+            if(count < nums.size()){
+                ++i1;
+                ++count;
+            }
+            else{
+	      i1 = 0;
+	      ++i0;
+	      count = 1;
+            }
+        }
+
+        if(i1 < i0){
+            out[0] = i1;
+            out[1] = i0;
+        }
+        else{
+            out[0] = i0;
+            out[1] = i1;
+        }
+
+        return out;   
+    }
+
 int main(int argc, char *argv[])
 {
 
