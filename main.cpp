@@ -119,45 +119,59 @@ vector<int> twoSum(vector<int>& nums, int target) {
 
 int lengthOfLongestSubstring(string s) {
 
+  int SizeString = s.size();
+  
   if (s.empty()) {
     return 0;
   }
-
-  string LongestRepetingSubstring = "";
-  int out = s.size();
-  map<char,int> KnownChar;
-  int LastStop;
-
-  for (int i0 = 0; i0 < s.size(); ++i0) {
-
-    auto search = KnownChar.find(s[i0]);
-    
-    if (search != KnownChar.end()) {
-      LastStop = i0;
-      int length = i0-KnownChar[s[i0]];
-      if (length > LongestRepetingSubstring.size()) {
-	LongestRepetingSubstring = s.substr(KnownChar[s[i0]],length);
-      }
-    }
-
-    KnownChar[s[i0]] = i0;
-
+  else if (SizeString == 1) {
+    return 1;
   }
 
-  cout << LongestRepetingSubstring << endl;
-  int SizeLongestRepetingSubstring = LongestRepetingSubstring.size();
+  vector<string> Candidate(SizeString,"");
+  int IndexCandidate = 0;
+  // char TempChar;
 
-  if (SizeLongestRepetingSubstring != out and SizeLongestRepetingSubstring != 0) {
-    out = LongestRepetingSubstring.size();
+
+  for (auto it0 = s.begin(); it0 != s.end(); ++it0) {
+    
+    // cout << "*it0 : " << *it0 << "\n";
+        
+    Candidate[IndexCandidate].push_back(*it0);
+
+    auto it1 = it0+1;
+    
+    while (Candidate[IndexCandidate].find(*it1) == string::npos and it1 != s.end()) {
+      // cout << "IndexCandidate = " << IndexCandidate << " *it1 : " << *it1 << "\n";
+      // printf("IndexCandidate = %d\n", IndexCandidate);
+      
+      // TempChar = *it1;
+      Candidate[IndexCandidate].push_back(*it1);
+      ++it1;
+    }
+
+    ++IndexCandidate;
+    
+  }
+
+  int out = Candidate[0].size();
+
+  for (int i0 = 0; i0 < Candidate.size(); ++i0) {
+    if (Candidate[i0].size() > out) {
+      cout << Candidate[i0] << "\n";
+      out = Candidate[i0].size();
+    }
   }
 
   return out;
+
 }
 
 int main(int argc, char *argv[])
 {
 
-  string s = "azertyaabjfoire";
+  string s = "azertbycuiaopqsdbfghjklmc";
+  string answer = "zertbycuiaopqsdbfghjklm";
 
   cout << lengthOfLongestSubstring(s) << endl;
   
