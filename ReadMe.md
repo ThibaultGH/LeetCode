@@ -5,6 +5,7 @@
 <span style="color:green;">Easy</span>
 * Roman to integer [link](https://leetcode.com/problems/roman-to-integer/)
 * TwoSum [link](https://leetcode.com/problems/two-sum/)
+* Palindrome Number [link](https://leetcode.com/problems/palindrome-number/)
 
 <span style="color:orange;">Medium</span>
 * Add Two Numbers [link](https://leetcode.com/problems/add-two-numbers/)
