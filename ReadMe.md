@@ -11,6 +11,7 @@
 <span style="color:orange;">Medium</span>
 * Add Two Numbers [link](https://leetcode.com/problems/add-two-numbers/)
 * Longest Substring Without Repeating Characters [link](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+* Longest Palindromic Substring [link](https://leetcode.com/problems/longest-palindromic-substring/)
 
 <span style="color:red;">Hard</span>
 * Median of two sorted arrays [link](https://leetcode.com/problems/median-of-two-sorted-arrays/) 
