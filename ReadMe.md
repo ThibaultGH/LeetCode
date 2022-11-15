@@ -1,8 +1,12 @@
-# LeetCode problems
+# *** THIS REPO IS NO LONGER MAINTAIN ***
+Go to [GitLab's repo](https://gitlab.com/thibaultcimic/LeetCode)
+
+
+## LeetCode problems
  This repo is used to work on LeetCode training problems locally on a computer, therefore make use of a powerful editor like Emacs or debugger like gdb.
  You can see my Leetcode profil [here](https://leetcode.com/Wololllooo/)
 
-## Problems solved or **in the making**
+### Problems solved or **in the making**
 <span style="color:green;">Easy</span>
 * Roman to integer [link](https://leetcode.com/problems/roman-to-integer/)
 * TwoSum [link](https://leetcode.com/problems/two-sum/)
